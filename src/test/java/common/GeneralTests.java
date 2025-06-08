@@ -1,3 +1,5 @@
+package common;
+
 import itmo.tg.Config;
 import org.junit.jupiter.api.Test;
 
