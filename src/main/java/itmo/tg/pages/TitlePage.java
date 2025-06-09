@@ -17,6 +17,13 @@ public class TitlePage extends Page {
         doLogIn(Util.WRONG_PASSWORD);
     }
 
+    public void logOut() {
+        var profileButton = Util.getElementByXpath(driver, "/html/body/div[3]/div[1]/div[1]/div/div/ul/li[1]/ul/li[1]/a[2]");
+        profileButton.click();
+        var logOutButton = Util.getElementByXpath(driver, "/html/body/div[3]/div[1]/div[1]/div/div/ul/li[1]/ul/li[1]/div/ul/li[4]/a");
+        logOutButton.click();
+    }
+
     private void doLogIn(String password) {
         var orderButton = Util.getElementByXpath(driver, "//*[@id=\"menu_9\"]");
         orderButton.click();

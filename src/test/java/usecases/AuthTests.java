@@ -2,7 +2,6 @@ package usecases;
 
 import common.SeleniumTests;
 import itmo.tg.Util;
-import itmo.tg.pages.DashboardPage;
 import itmo.tg.pages.TitlePage;
 import org.junit.jupiter.api.Test;
 
@@ -39,10 +38,9 @@ public class AuthTests extends SeleniumTests {
         var drivers = getDrivers();
         drivers.forEach(driver -> {
             var titlePage = new TitlePage(driver);
-            var dashboardPage = new DashboardPage(driver);
             driver.get(Util.BASE_URL);
             titlePage.logIn();
-            dashboardPage.logOut();
+            titlePage.logOut();
             var logInButton = Util.getElementByXpath(driver, "/html/body/div[4]/div[1]/div[1]/div/div[1]/ul/li[1]/a");
             assertTrue(logInButton.isDisplayed());
         });
